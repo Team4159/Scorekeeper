@@ -1,0 +1,13 @@
+Controls:
+
+spacebar -- reset
+1 -- red ready
+2 -- blue ready
+q -- 5 pts to red
+w -- 10 pts to red
+p -- 5 pts to blue
+o -- 10 pts to blue
+z -- 5 pts from red
+m -- 5 pts from blue
+- -- 10 sec subtracted from match time
+= -- 10 sec added to match time
