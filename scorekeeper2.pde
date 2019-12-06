@@ -43,13 +43,13 @@ long t_countdown;
 void setup() {
   reset();
 
-  size(1450, 250, P3D);
+  size(1450, 250);
   colorMode(RGB);
   background(0);
 
   flagAloneLoc = width/2;
 
-  blur = loadShader("blur.glsl");
+  // blur = loadShader("blur.glsl");
 
   redX = 250;
   blueX = width - 250;
@@ -64,10 +64,11 @@ void setup() {
   //  headFont = createFont("Electronic Highway Sign", 100);
   //  bigFont = createFont("Electronic Highway Sign", 220);
   //  smallFont = createFont("Electronic Highway Sign", 40);
+  
 
-  headFont = createFont("Digital-7 Mono", 130);
-  bigFont = createFont("Digital-7 Mono", 280);
-  smallFont = createFont("Digital-7 Mono", 40);
+  headFont = createFont("EHSMB.TTF", 130);
+  bigFont = createFont("EHSMB.TTF", 280);
+  smallFont = createFont("EHSMB.TTF", 40);
 
 
   textAlign(CENTER, CENTER);
@@ -327,9 +328,9 @@ void drawScores() {
 
   textFont(bigFont);
   fill(255, 0, 0);
-  text(redScore, redX, height / 2 - 25);
+  text(redScore, redX, height / 2);
   fill(0, 0, 255);
-  text(blueScore, blueX, height / 2 - 25);
+  text(blueScore, blueX, height / 2);
 }
 
 void drawGFX() {
@@ -383,9 +384,9 @@ void drawClock() {
   int minutes = matchTime / 60;
   int seconds = matchTime % 60;
   if (seconds < 10) {
-    text("0"+minutes+":"+"0"+seconds, width/2, height-200);
+    text("0"+minutes+":"+"0"+seconds, width/2, 75);
   } else {
-    text("0"+minutes+":"+seconds, width/2, height-200);
+    text("0"+minutes+":"+seconds, width/2, 75);
   }
 }
 
