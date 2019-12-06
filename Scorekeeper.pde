@@ -282,7 +282,7 @@ void flag(char team) {
 
 void score(char goal, char team) {
 
-  if (gameState == 3) {
+  if (gameState == 3 || gameState == 4) {
 
     int goalValue = 0;
 
@@ -299,8 +299,10 @@ void score(char goal, char team) {
       redScore += redStack;
       if (redFlag) redScore +=5;
       //play appropriate scoring animation
-      player = minim.loadFile("team1score.wav");
-      player.play();
+      if (gameState == 3) {
+        player = minim.loadFile("team1score.wav");
+        player.play();
+      }
       //redFlag = false;
       redAssist = false;
       redStack = 0;
@@ -309,8 +311,10 @@ void score(char goal, char team) {
       blueScore += blueStack;
       if (blueFlag) blueScore +=5;
       //play appropriate scoring animation
-      player = minim.loadFile("team2score.wav");
-      player.play();
+      if (gameState == 4) {
+        player = minim.loadFile("team2score.wav");
+        player.play();
+      }
       //blueFlag = false;
       blueAssist = false;
       blueStack = 0;
